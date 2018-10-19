@@ -21,7 +21,7 @@ import java.util.Scanner;
  数据规模和约定
  　　对于所有评测用例，输入的数字不超过30个，保证0正好出现一次且为最后一个数字。
  */
-public class TiaoYiTiao {
+public class CCF_1_TiaoYiTiao {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int result = 0;

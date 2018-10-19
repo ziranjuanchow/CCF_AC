@@ -45,7 +45,7 @@ import java.util.Scanner;
  　　对于60%的评测用例，1 ≤ N, K ≤ 50，1 ≤ w ≤ N，1 ≤ s ≤ 300，1 ≤ c ≤ 50；
  　　对于所有评测用例，1 ≤ N, K ≤ 1000，1 ≤ w ≤ N，1 ≤ s ≤ 10000，1 ≤ c ≤ 100。
  */
-public class YaoShiHe {
+public class CCF_2_YaoShiHe {
     public static void main(String[] args){
         Scanner sc =new Scanner(System.in);
         int N = sc.nextInt();//教室的个数

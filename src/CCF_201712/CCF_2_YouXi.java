@@ -36,7 +36,7 @@ import java.util.Scanner;
  数据规模和约定
  　　对于所有评测用例，1 ≤ n ≤ 1000，1 ≤ k ≤ 9
  */
-public class YouXi {
+public class CCF_2_YouXi {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -51,7 +51,7 @@ public class YouXi {
         while(true){
             //判断报数
             for (int i = 0; i < n ; i++) {
-                if (friend[i].getNumber() != 0 && (friend[i].getNumber() % k ==0 || (friend[i].getNumber()%10 == k))) {
+                if (friend[i].getNumber() != 0 && (friend[i].getNumber() % k == 0 || (friend[i].getNumber() %10== k))) {
                     friend[i].setNumber(0);
                     check++;
                 }

@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 最小差值
  *
  */
-public class ZuiXiaoChaZhi {
+public class CCF_1_ZuiXiaoChaZhi {
     public static void main(String[] args){
         Scanner  sc = new Scanner(System.in);
         int n = sc.nextInt();

@@ -24,7 +24,7 @@ import java.util.Scanner;
  样例说明
  　　把80元分成30元和50元，分别买3瓶和5瓶，其中3瓶送1瓶，5瓶送2瓶，共得到11瓶。
  */
-public class DaJiangYou {
+public class CCF_1_DaJiangYou {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
