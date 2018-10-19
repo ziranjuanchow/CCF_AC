@@ -1,3 +1,5 @@
+package CCF_201712;
+
 import java.util.Scanner;
 
 /**
