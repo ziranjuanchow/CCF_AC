@@ -4,6 +4,7 @@ import java.util.Scanner;
  * Created by liudong on 2018/10/19.
  * CCF  201712-1
  * 最小差值
+ *
  */
 public class ZuiXiaoChaZhi {
     public static void main(String[] args){
