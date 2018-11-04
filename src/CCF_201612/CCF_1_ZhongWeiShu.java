@@ -1,3 +1,5 @@
+package CCF_201612;
+
 import java.util.Arrays;
 import java.util.Scanner;
 /**
@@ -35,7 +37,7 @@ import java.util.Scanner;
  　　对于所有评测用例，1 ≤ n ≤ 1000，1 ≤ ai ≤ 1000。
  */
 
-public class Main {
+public class CCF_1_ZhongWeiShu {
     public static void main(String[] args) {
         Scanner sc =new Scanner(System.in);
         int n = sc.nextInt();

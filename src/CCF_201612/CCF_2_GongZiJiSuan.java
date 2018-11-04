@@ -1,3 +1,5 @@
+package CCF_201612;
+
 import java.util.Scanner;
 /**
  * 问题描述
@@ -33,7 +35,7 @@ import java.util.Scanner;
  一点要避免使用浮点类型变量，确保金额相关的计算准确无误
  */
 
-public class Main{
+public class CCF_2_GongZiJiSuan{
     public static void main(String[] args) {
         int salaryRange[] = { 3500, 3500 + 1500, 3500 + 4500, 3500 + 9000, 3500 + 35000, 3500 + 55000, 3500 + 80000 };
         int taxRate[] = { 3, 10, 20, 25, 30, 35, 45 };
