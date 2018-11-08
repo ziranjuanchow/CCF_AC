@@ -82,7 +82,7 @@ public class CCF_2_XiaoChuLeiYouXi {
             for (int j = 0; j < m; j++) {
                 System.out.print(copy_matrix[i][j]+" ");
                 count++;
-                if (count == 5) {
+                if (count == m) {
                     System.out.print('\n');
                     count=0;
                 }
