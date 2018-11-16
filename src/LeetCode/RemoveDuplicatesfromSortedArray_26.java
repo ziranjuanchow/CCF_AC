@@ -27,7 +27,7 @@ public class RemoveDuplicatesfromSortedArray_26 {
             }
         }
         for (int j = 0; j < nums.length; j++) {
-            System.out.print(nums[i]);
+            System.out.print(nums[j]);
         }
         return i;
     }
