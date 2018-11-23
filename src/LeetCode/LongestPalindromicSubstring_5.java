@@ -43,7 +43,7 @@ public class LongestPalindromicSubstring_5 {
     }
 
     public static void main(String[] args){
-        String s = "babad";
+        String s = "abcdmadamabcd";
         LongestPalindromicSubstring_5 l = new LongestPalindromicSubstring_5();
         String result = l.longestPalindrome(s);
         System.out.print(result);
