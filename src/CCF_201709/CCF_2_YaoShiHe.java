@@ -1,5 +1,7 @@
 package CCF_201709;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -46,30 +48,96 @@ import java.util.Scanner;
  　　对于所有评测用例，1 ≤ N, K ≤ 1000，1 ≤ w ≤ N，1 ≤ s ≤ 10000，1 ≤ c ≤ 100。
  */
 public class CCF_2_YaoShiHe {
+    static int time = 1, maxtime = 0, keyamount;
+    static int[] keylist;
+    static List<Teacher> teacherList = new ArrayList<>();
     public static void main(String[] args){
         Scanner sc =new Scanner(System.in);
-        int N = sc.nextInt();//教室的个数
-        int K = sc.nextInt();//教师的个数
-        int[][] s = new int[K][4];
-        int[] result = new int[N]; //存放钥匙
-        //输入的值
-        for (int i = 0; i < K; i++) {
-            for (int j = 0; j < 3; j++) {
-                s[i][j] = sc.nextInt();
+        keyamount = sc.nextInt();
+        int teacheramount = sc.nextInt();
+        for (int i = 0; i < teacheramount; i++) {
+            int key = sc.nextInt();
+            int start = sc.nextInt();
+            int duration = sc.nextInt();
+            if (start + duration > maxtime) {
+                maxtime = start + duration;
+            }
+            Teacher teacher = new Teacher(key, start, start+duration);
+            teacherList.add(teacher);
+        }
+        keylist = new int[keyamount];
+        for (int i = 0; i < keyamount; i++) {
+            keylist[i] = i + 1;
+        }
+        while(time <= maxtime){
+            returnkey();
+            getkey();
+            time++;
+        }
+        for (int i = 0; i < keylist.length; i++) {
+            System.out.print(keylist[i] + " ");
+        }
+
+    }
+
+    private static void getkey(){
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (teacherList.get(i).start == time) {
+                int temp = teacherList.get(i).key;
+                for (int j = 0; j < keylist.length; j++) {
+                    if (keylist[j] == temp) {
+                        keylist[j] = 0;
+                    }
+                }
             }
         }
-        //取出还钥匙的  最后时间的值
-        for (int i = 0; i < K; i++) {
-            for (int j = 1; j < 3; j++) {
-                s[i][3] += s[i][j];
+    }
+
+    private static void returnkey(){
+        List<Integer> returnlist = new ArrayList<>();
+        for (int i = 0; i < teacherList.size(); i++) {
+            int temp = teacherList.get(i).end;
+            if (temp == time) {
+                returnlist.add(teacherList.get(i).key);
+            }
+        }
+        if (returnlist.isEmpty()) {
+            return;
+        } else{
+            //将要归还的钥匙从大到小排列
+            for (int i = 0; i < returnlist.size() - 1; i++) {
+                for (int j = 0; j < returnlist.size() - 1; j++) {
+                    if (returnlist.get(j) > returnlist.get(j+1)) {
+                        int temp = returnlist.get(j);
+                        returnlist.set(j, returnlist.get(j + 1));
+                        returnlist.set(j + 1, temp);
+                    }
+                }
+            }
+        }
+        int m = 0;
+        for (int i = 0; i < keylist.length; i++) {
+            if (keylist[i] == 0){
+                keylist[i] = returnlist.get(m);
+                if (m < returnlist.size() - 1) {
+                    m++;
+                }else{
+                    break;
+                }
             }
         }
 
-        for (int i = 0; i < K ; i++) {
-            
+    }
+
+    public static class Teacher{
+        int key;
+        int start;
+        int end;
+
+        public Teacher(int key, int start, int end){
+            this.key = key;
+            this.start = start;
+            this.end = end;
         }
-
-
-
     }
 }
