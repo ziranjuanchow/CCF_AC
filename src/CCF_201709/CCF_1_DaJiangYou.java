@@ -30,15 +30,15 @@ public class CCF_1_DaJiangYou {
         int N = sc.nextInt();
         int number = 0;
         if (N / 50 != 0 ) {
-            number = number + 7 *(N/50);
+            number = number + 7 * (N/50);
             N = N%50;
         }
         if(N/30 != 0){
-            number = number + 4*(N/30);
+            number = number + 4 * (N/30);
             N = N%30;
         }
         if(N/10 != 0){
-            number = number + 1*(N/10);
+            number = number + 1 * (N/10);
         }
         System.out.print(number);
 

@@ -51,7 +51,7 @@ public class CCF_2_MaiCai {
         for (int i = 0; i < n; i++) {
             for(int j = 0; j< n;j++) {
                 if (v1[i][0] <= v2[j][1] && v1[i][1] >= v2[j][0]) {
-                     ans += Math.min( v1[i][1],v2[j][1]) - Math.max(v1[i][0] , v2[j][0]);
+                     ans += Math.min(v1[i][1],v2[j][1]) - Math.max(v1[i][0], v2[j][0]);
                 }
             }
         }
