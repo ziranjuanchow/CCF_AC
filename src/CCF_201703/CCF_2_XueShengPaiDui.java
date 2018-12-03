@@ -53,16 +53,19 @@ public class CCF_2_XueShengPaiDui {
                 num[i][j] = sc.nextInt();
             }
         }
-        //初始化学生的编号
+        //初始化学生的编号.
         for (int i = 1; i <= n; i++) {
             students.add(i);
         }
-        int index=0 ;
+        int index = 0 ;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (num[i][0] == students.get(j)) {
+                    //即将插入的新的位置
                    index = students.indexOf(students.get(j)) + num[i][1];
+                   //删除掉将要移动的学生
                    students.remove(students.get(j));
+                   //将移动的新的位置加入链表中
                    students.add(index,num[i][0]);
                    break;
                 }

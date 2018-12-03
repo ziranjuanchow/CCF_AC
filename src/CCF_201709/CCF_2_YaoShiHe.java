@@ -48,24 +48,26 @@ import java.util.Scanner;
  　　对于所有评测用例，1 ≤ N, K ≤ 1000，1 ≤ w ≤ N，1 ≤ s ≤ 10000，1 ≤ c ≤ 100。
  */
 public class CCF_2_YaoShiHe {
-    static int time = 1, maxtime = 0, keyamount;
-    static int[] keylist;
-    static List<Teacher> teacherList = new ArrayList<>();
+    private static int time = 1, maxtime = 0;
+    private static int[] keylist;
+    private static List<Teacher> teacherList = new ArrayList<>();
     public static void main(String[] args){
         Scanner sc =new Scanner(System.in);
-        keyamount = sc.nextInt();
+        int keyamount = sc.nextInt();
         int teacheramount = sc.nextInt();
         for (int i = 0; i < teacheramount; i++) {
             int key = sc.nextInt();
             int start = sc.nextInt();
             int duration = sc.nextInt();
+            //老师使用的最长的时间
             if (start + duration > maxtime) {
                 maxtime = start + duration;
             }
             Teacher teacher = new Teacher(key, start, start+duration);
             teacherList.add(teacher);
         }
-        keylist = new int[keyamount];
+        //初始钥匙的编号
+        int[] keylist = new int[keyamount];
         for (int i = 0; i < keyamount; i++) {
             keylist[i] = i + 1;
         }
@@ -106,7 +108,7 @@ public class CCF_2_YaoShiHe {
         } else{
             //将要归还的钥匙从大到小排列
             for (int i = 0; i < returnlist.size() - 1; i++) {
-                for (int j = 0; j < returnlist.size() - 1; j++) {
+                for (int j = 0; j < returnlist.size() - 1 - i; j++) {
                     if (returnlist.get(j) > returnlist.get(j+1)) {
                         int temp = returnlist.get(j);
                         returnlist.set(j, returnlist.get(j + 1));
@@ -115,6 +117,7 @@ public class CCF_2_YaoShiHe {
                 }
             }
         }
+
         int m = 0;
         for (int i = 0; i < keylist.length; i++) {
             if (keylist[i] == 0){
