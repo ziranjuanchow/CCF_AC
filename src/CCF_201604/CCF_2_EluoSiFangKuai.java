@@ -84,6 +84,7 @@ public class CCF_2_EluoSiFangKuai {
         //输入的行数 3
         int k = sc.nextInt();
         k--;// 2 (0,1,2)
+
         int down = N;
         //计算下落几格
         for (int j = 0; j < 4; j++) {
@@ -95,7 +96,8 @@ public class CCF_2_EluoSiFangKuai {
                     break;
                 }
             }
-            if (i < 0) continue;
+            if (i < 0)
+                continue;
             for (i = 4; i < N ; i++) {
                 if (a[i][k+j] == 0) {
                   t++;

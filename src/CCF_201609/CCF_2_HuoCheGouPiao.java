@@ -46,7 +46,7 @@ public class CCF_2_HuoCheGouPiao {
             boolean flag = false;//是否连座的判断
             for (int j = 0; j < 20; j++) {
                 for (int k = 0; k < 5 ; k++) {
-                    //可以订票
+                    //可以订票 开头是0就可以订票
                     if (record[j*5+k] == 0 && k+num <= 5) {
                         for (int t = j*5+k; t < j*5+k+num ; t++) {
                             record[t] = i+1;
@@ -58,7 +58,7 @@ public class CCF_2_HuoCheGouPiao {
                 if (flag)
                     break;
             }
-            //没有连续的座位 （!(没座位)）=有座位
+            //没有连续的座位 （!(没座位)）= 有座位
             //否则应该安排在编号最小的几个空座位中（不考虑是否相邻）
             if(!flag) {
                 while (num-- > 0) {
