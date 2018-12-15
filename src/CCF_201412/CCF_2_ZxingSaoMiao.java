@@ -31,6 +31,11 @@ import java.util.Scanner;
  　　1≤n≤500，矩阵元素为不超过1000的正整数。
  */
 public class CCF_2_ZxingSaoMiao {
+    public static final int RIGHT = 1;
+    public static final int DOWN = 2;
+    public static final int RIGHTUP = 3;
+    public static final int LEFTDOWN = 4;
+
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -41,7 +46,54 @@ public class CCF_2_ZxingSaoMiao {
             }
         }
 
+        int row = 0;
+        int col = 0;
+        int direction = RIGHT;
+        while(row != n - 1 || col != n-1){
+            System.out.print(arr[row][col]+" ");
+            switch (direction){
+                case RIGHT:
+                    col++;
+                    if (row == 0){
+                        direction = LEFTDOWN;
+                    }else{
+                        direction = RIGHTUP;
+                    }
+                    break;
 
+                case RIGHTUP:
+                    row--;
+                    col++;
+                    if (row == 0 && col != n-1) {
+                        direction = RIGHT;
+                    }else if (col == n - 1) {
+                        direction = DOWN;
+                    }else{
+                        direction = RIGHTUP;
+                    }
+                    break;
+                case DOWN:
+                    row++;
+                    if (col == 0) {
+                        direction = RIGHTUP;
+                    }else {
+                        direction = LEFTDOWN;
+                    }
+                    break;
+                case LEFTDOWN:
+                    row++;
+                    col--;
+                    if (col == 0 && row != n-1) {
+                        direction = DOWN;
+                    }else if (row == n-1) {
+                        direction = RIGHT;
+                    }else {
+                        direction = LEFTDOWN;
+                    }
+                    break;
+            }
+        }
+        System.out.print(arr[n-1][n-1]);
     }
 
 }
