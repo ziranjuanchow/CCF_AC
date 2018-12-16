@@ -39,7 +39,7 @@ public class CCF_2_ISBN {
             sum += (ch[i] - 48) *(i+1);
         }
 
-        sum =  sum%11;
+        sum =  sum % 11;
         if (sum == 10) {
                 c = 'X';
         }else {

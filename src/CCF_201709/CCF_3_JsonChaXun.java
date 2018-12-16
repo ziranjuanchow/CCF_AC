@@ -81,7 +81,6 @@ public class CCF_3_JsonChaXun {
         int n = sc.nextInt();
         int m = sc.nextInt();
         String s = "";
-        sc.nextLine();
         for (int i = 0; i < n; i++) {
             s += sc.nextLine();
         }
@@ -131,7 +130,7 @@ public class CCF_3_JsonChaXun {
                     i += key.length()+1;
                     key = sloveString(key);
                     break;
-                //截取'：'后的值，分object和string
+                //截取':'后的值，分object和string
                 case ":":
                     char c = s.charAt(i+1);
                     if (c == '"') {

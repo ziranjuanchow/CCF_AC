@@ -67,9 +67,9 @@ import java.util.Scanner;
  　　所有的评测用例满足：2 ≤ m, n ≤ 100，0 ≤ q ≤ 100，0 ≤ x < m（x表示输入数据中所有位置的x坐标），0 ≤ y < n（y表示输入数据中所有位置的y坐标）。
  */
 public class CCF_3_HuaTu {
-    public static int[][] go = {{1,0},{-1,0},{0,1},{0,-1}};
-    public static int[][] mark = new int[101][101];
-    public static char[][] chars = new char[101][101];
+    private static int[][] go = {{1,0},{-1,0},{0,1},{0,-1}};
+    private static int[][] mark = new int[101][101];
+    private static char[][] chars = new char[101][101];
 
     public static int m,n;
 
