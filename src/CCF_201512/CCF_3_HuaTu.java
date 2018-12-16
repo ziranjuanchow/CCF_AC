@@ -142,7 +142,7 @@ public class CCF_3_HuaTu {
         }
     }
 
-    public static Queue<Integer[]> queue = new LinkedList<Integer[]>();
+    private static Queue<Integer[]> queue = new LinkedList<Integer[]>();
 
     private static void fill(int x, int y, char ch) {
           boolean markb[][] = new boolean[m][n];
